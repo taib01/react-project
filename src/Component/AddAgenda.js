@@ -34,8 +34,8 @@ function AddAgenda () {
         }
 
 
-        const id = Agendas.length + 1 ; 
-        Agendas.push({id: id,title: title, description: description, status: status, date: date, time: time });
+        //const id = Agendas.length + 1 ; 
+        Agendas.push({title: title, description: description, status: status, date: date, time: time });
         history("/");
     }
 
@@ -80,7 +80,6 @@ function AddAgenda () {
                         <option value="Unnecessary and urgent">Unnecessary and urgent</option>
                         <option value="Unnecessary and not urgent">Unnecessary and not urgent</option>
                     </select>
-                    {/* <input type="text" className="form-control" id="status"  placeholder="Enter Status" onChange={e => setStatus(e.target.value)}/> */}
                     {status.length<=0 && error == true?
                         <label> <small className="text-danger"> Status field is required</small> </label>
                         :<span></span>
@@ -97,7 +96,6 @@ function AddAgenda () {
                 <div className="form-group text-left">
                     <label htmlFor="time">time</label>
                     <input type="time" className="form-control" id="time"  placeholder="Enter Time" onChange={e => setTime(e.target.value)} required/>
-                    {time}
                     {time==null&& error == true?
                         <label> <small className="text-danger"> Time field is required  </small> </label>
                         :<span></span>

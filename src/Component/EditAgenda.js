@@ -6,12 +6,13 @@ import "./AddAgenda.css";
 
 function EditAgenda () {
     
-    const [id, setId] = useState(0) ; 
+    //const [id, setId] = useState(0) ; 
     const [title, setTitle] = useState("") ; 
     const [description, setDescription] = useState("") ; 
     const [status, setStatus] = useState("") ; 
     const [date, setDate] = useState("") ; 
     const [time, setTime] = useState("") ; 
+    const [index, setIndex] = useState(0) ; 
     const [error,setError]= useState(false);
     const [errorTime,setErrorTime]= useState(false);
 
@@ -28,14 +29,14 @@ function EditAgenda () {
 
         //test at validité of time about if we have another work in the same time 
         for (let i = 0 ; i < Agendas.length ; i++){
-            if (date == Agendas[i].date && time == Agendas[i].time && i != id-1){
+            if (date == Agendas[i].date && time == Agendas[i].time && i != index){
                 setErrorTime(true);
                 return ;
             }
         }
         
-        Agendas[id-1] = {
-        id : id ,
+        Agendas[index] = {
+        //id : id ,
         title : title ,
         description : description  ,
         status : status ,
@@ -51,18 +52,19 @@ function EditAgenda () {
     }
 
     useEffect( () => {
-        setId(localStorage.getItem('Id'))
+        //setId(localStorage.getItem('Id'))
         setTitle(localStorage.getItem('Title'))
         setDescription(localStorage.getItem('Description'))
         setStatus(localStorage.getItem('Status'))
         setDate(localStorage.getItem('Date'))
         setTime(localStorage.getItem('Time'))
+        setIndex(localStorage.getItem('Index'))
     },[])
 
     const getDate =()=>{
         var today = new Date();
         var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); 
         var yyyy = String(today.getFullYear());
         let dateString ;
         //dateString = dd + '-' + mm + '-' + yyyy;
