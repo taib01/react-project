@@ -28,6 +28,9 @@ function Home (){
     return (
         <Fragment>
             <div className="Container">
+                <div className="w-90 m-2 text-center">
+                    <h2 className="text-primary"> React App Agneda CRUD</h2>
+                </div>
                 <table className=" table table-striped w-90">
                     <thead className="table-dark">
                         <tr>
@@ -56,6 +59,7 @@ function Home (){
                                             <Link to={"/edit"}>
                                                 <button className="btn btn-primary" onClick={() => handleEdit(item.id, item.title, item.description, item.status, item.date, item.time)}> Edit</button>
                                             </Link>
+                                            &nbsp;
                                             <button className="btn btn-danger" onClick={() => handleDelete(item.id)}> Delete</button>
                                         </td>
                                     </tr>
@@ -67,8 +71,8 @@ function Home (){
                         }
                     </tbody>
                 </table>
-                <Link to={"/create"}>
-                    <button className="btn btn-primary" > Create New Agenda</button>
+                <Link to={"/create"}  className="w-90">
+                    <button className="w-100 btn btn-primary m-2" > Create New Agenda</button>
                 </Link>
             </div>
         </Fragment>

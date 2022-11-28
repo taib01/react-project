@@ -1,6 +1,6 @@
 const Agendas =[
-    { id: 1, title: "any1" , description: "any1", status: "any1", date: "any1" , time: "any1"},
-    { id: 2, title: "any2" , description: "any2", status: "any2", date: "any2" , time: "any2"},
-    { id: 3, title: "any3" , description: "any3", status: "any3", date: "any3" , time: "any3"}
+    { id: 1, title: "Meeting" , description: "meeting with colleagues in work", status: "Necessary", date: "2022-11-26" , time: "09:15"},
+    { id: 2, title: "Going out " , description: "Going out for 30 mn", status: "Unnecessary and urgent", date: "2022-11-29" , time: "01:30"},
+    { id: 3, title: "start work in react test" , description: "", status: "Necessary and urgent", date: "2022-11-28" , time: "01:45"}
 ]
 export default Agendas
